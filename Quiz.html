@@ -1,0 +1,83 @@
+<script>
+let joueur = [];
+ 
+ function afficher() 
+ {
+    alert(joueur);
+ }
+  
+ function ajouter() {
+     let candidat = prompt("Saisissez le pseudonyme du joueur à ajouter dans l'equipe :");
+     if (!joueur.includes(candidat))
+     {
+        joueur.push(candidat);
+        alert("Le joueur suivant a été ajouté :" + candidat);
+     } 
+     else
+     {
+         alert('Ce candidat existe déjà !');
+     }
+ }
+  
+ function Rechercher() 
+ {
+    let Recherche = prompt('Saissisez le nom du candidat a rechercher.');
+    if (joueur.includes(Recherche))
+    {
+        alert('Le candidat est bien dans la liste.')
+    }
+    else
+    {
+        alert("Le candidat n'est pas dans la liste.")
+    }
+ }
+
+ let sup
+ let supIndex
+ function supprimer()
+ {
+     sup = prompt('Saissisez le nom du candidat à supprimer.')
+
+    if (joueur.includes(sup))
+    {
+        supIndex=joueur.indexOf(sup)
+        joueur.splice(supIndex, 1)
+        alert('Le candidat à bien était éliminé.')
+    }
+    else
+    {
+        alert("Le candidat n'existe pas.")
+    }
+ }
+  
+
+let choix 
+ do {
+     choix = prompt("\nGestionnaire d'equipe de football \n 1 : Afficher l'equipe \n 2 : Ajouter un joueur \n 3 : Rechercher un joueur \n 4 : Supprimer un joueur \n 5 : Quitter "); 
+  
+     switch (choix) 
+     {
+         case "1":
+             afficher();
+             break;
+         case "2":
+             ajouter();
+             break;
+         case "3":
+             Rechercher();
+             break;
+         case "4":
+             supprimer();
+             break;
+         case "5":
+            alert('Au revoir !') 
+            break;
+         default:
+             alert("Choix impossible !");
+             break;
+     }
+
+    
+    }while (choix <"5");
+
+</script>
